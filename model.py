@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import sys
-sys.path.append('../PNAS/')
+sys.path.append('./PNAS/')
 from PNASnet import *
 from genotypes import PNASNet
 
@@ -11,11 +11,13 @@ class PNASModel(nn.Module):
 
     def __init__(self, num_channels=3, train_enc=False, load_weight=1):
         super(PNASModel, self).__init__()
-        self.path = '../PNAS/PNASNet-5_Large.pth'
+        # The weight file can be downloaded at this repo https://github.com/Cadene/pretrained-models.pytorch
+        # self.path = '../PNAS/PNASNet-5_Large.pth'
+        # self.path = './PNAS/pnasnet5largeb-bf079911.pth'
 
         self.pnas = NetworkImageNet(216, 1001, 12, False, PNASNet)
-        if load_weight:
-            self.pnas.load_state_dict(torch.load(self.path))
+        # if load_weight:
+        #     self.pnas.load_state_dict(torch.load(self.path))
         
         for param in self.pnas.parameters():
             param.requires_grad = train_enc
