@@ -2,8 +2,8 @@ import torch
 import torchvision
 import torch.nn as nn
 import torch.nn.functional as F
-import pytorch_ssim
-from torchsummary import summary
+# import pytorch_ssim
+# from torchsummary import summary
 from PIL import Image
 from torchvision.models import vgg19
 from torchvision import transforms
