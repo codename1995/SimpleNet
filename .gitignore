@@ -1,5 +1,6 @@
 saved_models/
 __pycache__/
+.idea/
 *.pyc
 PNAS/PNASNet-5_Large.pth
 *.sh
